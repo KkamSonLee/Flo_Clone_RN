@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "flo_clone",
+    "slug": "flo_clone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "flo_clone"
+}

@@ -1,73 +1,116 @@
 import React from "react";
-import { StyleSheet, useColorScheme, View } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from "react-native";
 import styled from "styled-components/native";
-import { makeImgPath } from "../utils";
+import { SlideImg } from "../utils";
 import { BlurView } from "expo-blur";
-import Poster from "./Poster";
+import Btn from "./Btn";
+import SmallImage from "./SmallImage";
 
 const Wrapper = styled.View`
   flex-direction: row;
   height: 100%;
-  justify-content: center;
   align-items: center;
 `;
 const Column = styled.View`
   margin-left: 15px;
-  width: 60%;
+  align-items: flex-start;
 `;
-const BgImg = styled.Image``;
-const Title = styled.Text<{ isDark: boolean }>`
-  font-size: 16px;
+const BgImg = styled.Image`
+  width: 100%;
+`;
+const Title = styled.Text`
+  font-size: 30px;
   font-weight: 600;
-  color: ${(props) => (props.isDark ? "white" : props.theme.textColor)};
+  color: white;
 `;
-const Overview = styled.Text<{ isDark: boolean }>`
-  margin-top: 10px;
-  color: ${(props) => (props.isDark ? "white" : props.theme.textColor)};
-`;
-const Votes = styled(Overview)`
-  font-size: 12px;
+const SubTitle = styled.Text`
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
 `;
 
-interface MainSlideProps {
-  backdrop_path: string;
-  poster_path: string;
-  original_title: string;
-  vote_average: number;
-  overview: string;
-}
-
-const MainSlide: React.FC<MainSlideProps> = ({
-  backdrop_path,
-  poster_path,
-  original_title,
-  vote_average,
-  overview,
-}) => {
-  const isDark = useColorScheme() === "dark";
-
+const { height: SCREEN_HEIGHT } = Dimensions.get("window");
+const MainSlide = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, height: SCREEN_HEIGHT / 1.8 }}>
       <BgImg
         style={StyleSheet.absoluteFill}
-        source={{ uri: makeImgPath(backdrop_path) }}
+        source={require("../drawable_flo/img_default_4_x_1.png")}
       />
-      <BlurView
-        tint={isDark ? "dark" : "light"}
-        intensity={120}
-        style={StyleSheet.absoluteFill}
-      >
-        <Wrapper>
-          <Poster path={poster_path} />
-          <Column>
-            <Title isDark={isDark}>{original_title}</Title>
-            {vote_average > 0 ? (
-              <Votes isDark={isDark}>⭐{vote_average}/10</Votes>
-            ) : null}
-            <Overview isDark={isDark}>{overview.slice(0, 90)}...</Overview>
-          </Column>
-        </Wrapper>
-      </BlurView>
+      <Wrapper>
+        <Column>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 15,
+              width: "100%",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Btn index={8} width={50} />
+            <Btn index={9} width={50} />
+            <Btn index={10} width={50} />
+          </View>
+          <SubTitle>나를 위한 새로운 발견</SubTitle>
+          <View
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              marginTop: 10,
+              justifyContent: "flex-start",
+            }}
+          >
+            <Title>국내 알앤비 추천음악</Title>
+            <Btn index={11} width={70} />
+          </View>
+          <Text style={{ fontSize: 16, color: "white", opacity: 0.7 }}>
+            총 50곡 2021.12.20 new
+          </Text>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              width: "100%",
+              margin: 10,
+              justifyContent: "flex-start",
+            }}
+          >
+            <SmallImage index={1} />
+            <Column>
+              <SubTitle>Lilac</SubTitle>
+              <Text style={{ fontSize: 16, color: "white", opacity: 0.7 }}>
+                아이유
+              </Text>
+            </Column>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              width: "100%",
+              margin: 10,
+              marginBottom: 30,
+              justifyContent: "flex-start",
+            }}
+          >
+            <SmallImage index={4} />
+            <Column>
+              <SubTitle>Savage</SubTitle>
+              <Text style={{ fontSize: 16, color: "white", opacity: 0.7 }}>
+                에스파
+              </Text>
+            </Column>
+          </View>
+        </Column>
+      </Wrapper>
     </View>
   );
 };

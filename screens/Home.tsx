@@ -8,6 +8,7 @@ import Album from "../components/Album";
 import Swiper from "react-native-swiper";
 import HAlbumView from "../components/HAlbumView";
 import ShareIcon from "../components/ShareIcon";
+import MainSlide from "../components/MainSlide";
 
 const Container = styled.View`
   flex: 1;
@@ -28,6 +29,14 @@ const Home = () => {
       ListHeaderComponent={
         <>
           <Container>
+            <Container
+              style={{
+                width: "100%",
+                height: SCREEN_HEIGHT / 1.8,
+              }}
+            >
+              <MainSlide />
+            </Container>
             <HAlbumView
               itemPath={ImagePath}
               title={"오늘 발매 음악 >"}

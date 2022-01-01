@@ -7,6 +7,10 @@ export const TabbarImgPath = [
   { tabSrc: require("./drawable_flo/ic_bottom_search_no_select.png") },
   { tabSrc: require("./drawable_flo/bucket_icon.png") },
   { tabSrc: require("./drawable_flo/widget_black_play.png") },
+  { tabSrc: require("./drawable_flo/btn_nugu.png") },
+  { tabSrc: require("./drawable_flo/btn_main_ticket.png") },
+  { tabSrc: require("./drawable_flo/btn_main_setting.png") },
+  { tabSrc: require("./drawable_flo/btn_panel_play_large.png") },
 ];
 
 export const ImagePath = [
@@ -25,6 +29,7 @@ export const ImagePath = [
 export const SlideImg = [
   { src: require("./drawable_flo/img_home_viewpager_exp.png"), id: 1 },
   { src: require("./drawable_flo/img_home_viewpager_exp2.png"), id: 2 },
+  { src: require("./drawable_flo/img_default_4_x_1.png"), id: 3 },
 ];
 
 export const IconPath = [

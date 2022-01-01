@@ -17,7 +17,7 @@ const ChatView = styled.View`
 
 const VFloChatView = ({ index }) => {
   return (
-    <ChatView style={{ backgroundColor: DARK_COLOR }}>
+    <ChatView>
       <VFloChart index={index} mainTitle={"ssadasadsad"} subTitle={"sadas"} />
       <VFloChart
         index={index + 1}

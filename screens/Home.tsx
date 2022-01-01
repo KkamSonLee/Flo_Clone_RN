@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Dimensions, Image, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  Dimensions,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import styled from "styled-components/native";
 import HAlbum from "../components/HAlbum";
 import Loader from "../components/Loader";
@@ -23,7 +30,7 @@ const VSeperator = styled.View`
 `;
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
-const Home = () => {
+const Home = ({ navigation: { navigate } }) => {
   return (
     <FlatList
       ListHeaderComponent={
@@ -31,7 +38,6 @@ const Home = () => {
           <Container>
             <Container
               style={{
-                width: "100%",
                 height: SCREEN_HEIGHT / 1.8,
               }}
             >
@@ -55,14 +61,18 @@ const Home = () => {
                 height: SCREEN_HEIGHT / 7,
               }}
             >
-              <Image
-                source={SlideImg[0].src}
-                style={{ width: "100%", height: 100 }}
-                resizeMode="contain"
-              />
+              <TouchableOpacity
+                onPress={() => navigate("Stack", { screen: "One" })}
+              >
+                <Image
+                  source={SlideImg[0].src}
+                  style={{ width: "100%", height: "100%" }}
+                  resizeMode="contain"
+                />
+              </TouchableOpacity>
               <Image
                 source={SlideImg[1].src}
-                style={{ width: "100%", height: 100 }}
+                style={{ width: "100%", height: "100%" }}
                 resizeMode="contain"
               />
             </Swiper>

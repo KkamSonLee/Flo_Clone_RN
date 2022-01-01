@@ -1,7 +1,8 @@
 import React from "react";
+import { Text, TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const ScreenOne = ({ navigation: { navigate } }) => (
-  <TouchableOpacity onPress={() => navigate("Two")}>
+  <TouchableOpacity onPress={() => navigate("Tabs")}>
     <Text>go to two</Text>
   </TouchableOpacity>
 );

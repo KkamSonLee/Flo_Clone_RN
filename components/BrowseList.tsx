@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { DARK_COLOR } from "../colors";
+import { DARK_COLOR, SELECT_COLOR } from "../colors";
 import HAlbum from "../components/HAlbum";
 import VFloChart from "./VFloChart";
 
@@ -22,10 +23,19 @@ const Text = styled.Text`
 `;
 
 const BrowseList = ({ name }) => {
+  const [selected, setSelected] = useState(false);
   return (
-    <ChatView style={{ backgroundColor: DARK_COLOR }}>
-      <Text>{name}</Text>
-    </ChatView>
+    <TouchableOpacity
+      onPress={() => {
+        setSelected(!selected);
+      }}
+    >
+      <ChatView style={{ backgroundColor: DARK_COLOR }}>
+        <Text style={{ color: !selected ? "white" : SELECT_COLOR }}>
+          {name}
+        </Text>
+      </ChatView>
+    </TouchableOpacity>
   );
 };
 export default BrowseList;

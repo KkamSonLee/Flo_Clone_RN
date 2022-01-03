@@ -18,14 +18,15 @@ export const TabbarImgPath = [
   { tabSrc: require("./drawable_flo/btn_player_more.png") },
   { tabSrc: require("./drawable_flo/ic_my_like_off.png") },
   { tabSrc: require("./drawable_flo/btn_player_unlike_off.png") },
-  { tabSrc: require("./drawable_flo/nugu_btn_repeat_inactive.png") },
+  { tabSrc: require("./drawable_flo/btn_player_repeat_on_light.png") },
   { tabSrc: require("./drawable_flo/nugu_btn_skip_previous_32.png") },
   { tabSrc: require("./drawable_flo/nugu_btn_play_32.png") },
   { tabSrc: require("./drawable_flo/nugu_btn_skip_next_32.png") },
-  { tabSrc: require("./drawable_flo/nugu_btn_random_inactive.png") },
+  { tabSrc: require("./drawable_flo/btn_playlist_random_on.png") },
   { tabSrc: require("./drawable_flo/btn_actionbar_instagram.png") },
   { tabSrc: require("./drawable_flo/btn_player_related.png") },
   { tabSrc: require("./drawable_flo/btn_player_go_list.png") },
+  { tabSrc: require("./drawable_flo/btn_arrow_black.png") },
 ];
 
 export const ImagePath = [

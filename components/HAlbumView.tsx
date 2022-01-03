@@ -14,6 +14,7 @@ const VSeperator = styled.View`
 `;
 
 const HAlbumView = ({ itemPath, title, isSub }) => {
+  const navigation = useNavigation();
   return (
     <Container>
       <Text
@@ -38,7 +39,16 @@ const HAlbumView = ({ itemPath, title, isSub }) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) =>
           isSub ? (
-            <HAlbum index={item.id - 1} mainTitle="sad" subTitle="das" />
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Stack", {
+                  screen: "AlbumView",
+                  params: { data: item },
+                })
+              }
+            >
+              <HAlbum index={item.id - 1} mainTitle="sad" subTitle="das" />
+            </TouchableOpacity>
           ) : (
             <HAlbum index={item.id - 1} mainTitle="sad" subTitle="" />
           )

@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AlbumPlayer from "../screens/AlbumPlayer";
+import AlbumView from "../screens/AlbumView";
 const ScreenOne = ({ navigation: { navigate } }) => (
   <TouchableOpacity onPress={() => navigate("Tabs")}>
     <Text>go to two</Text>
@@ -23,12 +24,12 @@ const NativeStack = createNativeStackNavigator();
 const Stack = () => (
   <NativeStack.Navigator
     screenOptions={{
-      headerShown: false,
       animation: "fade",
+      headerShown: false,
     }}
   >
     <NativeStack.Screen name="AlbumPlayer" component={AlbumPlayer} />
-    <NativeStack.Screen name="Two" component={ScreenTwo} />
+    <NativeStack.Screen name="AlbumView" component={AlbumView} />
     <NativeStack.Screen name="Three" component={ScreenThree} />
   </NativeStack.Navigator>
 );

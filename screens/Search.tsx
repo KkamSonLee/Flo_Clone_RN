@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput, FlatList } from "react-native";
 import { DARK_COLOR, GRAY_COLOR, WHITE_COLOR } from "../colors";
 import styled from "styled-components/native";
+import PlayerControl from "../components/PlayerControl";
 const chartData = [
   { data: "이루리", id: 1 },
   { data: "아이유", id: 2 },
@@ -27,8 +28,6 @@ const chartData = [
 
 const Container = styled.View`
   flex: 1;
-  justify-content: flex-start;
-  flex-direction: column;
 `;
 const TitleText = styled.Text`
   flex: 1;
@@ -47,7 +46,7 @@ const Column = styled.View`
   align-items: flex-start;
 `;
 const HSeperator = styled.View`
-  height: 20px;
+  height: 10px;
 `;
 const RankText = styled.Text`
   flex: 1;
@@ -72,45 +71,45 @@ const Search = () => {
     setTitle(text);
   };
   return (
-    <Container>
-      <TextInput
-        style={{
-          height: 40,
-          color: "white",
-          backgroundColor: DARK_COLOR,
-          margin: 20,
-        }}
-        value={title}
-        onChangeText={(text) => setTitle(text)}
-        autoCapitalize="sentences"
-        autoCorrect
-        placeholder="🔍검색어를 입력하세요"
-        placeholderTextColor={GRAY_COLOR}
-        returnKeyType="next"
-        onEndEditing={() => console.log("onEndEditing")}
-        onSubmitEditing={() => console.log("onSubmitEditing")}
-      />
-      <View style={{ flex: 1 }}>
-        <View style={{ flexDirection: "row" }}>
-          <TitleText>급상승 검색어</TitleText>
-          <DayText>2022.01.02 01:00기준</DayText>
-        </View>
-        <FlatList
-          data={chartData}
-          keyExtractor={(item) => item.id + ""}
-          ItemSeparatorComponent={HSeperator}
+    <>
+      <Container>
+        <TextInput
           style={{
-            margin: 10,
+            height: 40,
+            color: "white",
+            backgroundColor: DARK_COLOR,
+            margin: 20,
           }}
-          renderItem={({ item }) => (
-            <Column>
-              <RankText>{item.id}</RankText>
-              <NameText>{item.data}</NameText>
-            </Column>
-          )}
+          value={title}
+          onChangeText={(text) => setTitle(text)}
+          placeholder="🔍검색어를 입력하세요"
+          placeholderTextColor={GRAY_COLOR}
         />
-      </View>
-    </Container>
+        <View style={{ flex: 1 }}>
+          <View style={{ flexDirection: "row" }}>
+            <TitleText>급상승 검색어</TitleText>
+            <DayText>2022.01.02 01:00기준</DayText>
+          </View>
+          <FlatList
+            data={chartData}
+            keyExtractor={(item) => item.id + ""}
+            ItemSeparatorComponent={HSeperator}
+            style={{
+              flex: 2,
+              margin: 10,
+            }}
+            renderItem={({ item }) => (
+              <Column>
+                <RankText>{item.id}</RankText>
+                <NameText>{item.data}</NameText>
+              </Column>
+            )}
+          />
+        </View>
+      </Container>
+
+      <PlayerControl />
+    </>
   );
 };
 export default Search;

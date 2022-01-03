@@ -11,6 +11,21 @@ export const TabbarImgPath = [
   { tabSrc: require("./drawable_flo/btn_main_ticket.png") },
   { tabSrc: require("./drawable_flo/btn_main_setting.png") },
   { tabSrc: require("./drawable_flo/btn_panel_play_large.png") },
+  { tabSrc: require("./drawable_flo/img_album_exp11.png") }, //index 12
+  { tabSrc: require("./drawable_flo/btn_player_setting.png") },
+  { tabSrc: require("./drawable_flo/btn_player_eq_off.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_down.png") },
+  { tabSrc: require("./drawable_flo/btn_player_more.png") },
+  { tabSrc: require("./drawable_flo/ic_my_like_off.png") },
+  { tabSrc: require("./drawable_flo/btn_player_unlike_off.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_repeat_inactive.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_skip_previous_32.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_play_32.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_skip_next_32.png") },
+  { tabSrc: require("./drawable_flo/nugu_btn_random_inactive.png") },
+  { tabSrc: require("./drawable_flo/btn_actionbar_instagram.png") },
+  { tabSrc: require("./drawable_flo/btn_player_related.png") },
+  { tabSrc: require("./drawable_flo/btn_player_go_list.png") },
 ];
 
 export const ImagePath = [
@@ -37,26 +52,4 @@ export const IconPath = [
   { Iconsrc: require("./drawable_flo/ic_main_instagram_btn.png"), id: 2 },
   { Iconsrc: require("./drawable_flo/ic_main_youtube_btn.png"), id: 3 },
   { Iconsrc: require("./drawable_flo/ic_main_twitter_btn.png"), id: 4 },
-];
-export const chartData = [
-  { data: "이루리", id: 1 },
-  { data: "아이유", id: 2 },
-  { data: "옷소매 붉은 끝동 OST", id: 3 },
-  { data: "MC몽", id: 4 },
-  { data: "Dreams Come True", id: 5 },
-  { data: "사랑은 늘 도망가", id: 6 },
-  { data: "듣기만 해도 성공하는 음악", id: 7 },
-  { data: "토요태", id: 8 },
-  { data: "회전목마", id: 9 },
-  { data: "성시경", id: 10 },
-  { data: "이선희", id: 11 },
-  { data: "에스파", id: 12 },
-  { data: "그 해 우리는 OST", id: 13 },
-  { data: "싱어게인", id: 14 },
-  { data: "비오", id: 15 },
-  { data: "리무진", id: 16 },
-  { data: "방탄소년단", id: 17 },
-  { data: "임영웅", id: 18 },
-  { data: "취중고백", id: 19 },
-  { data: "블랙핑크", id: 20 },
 ];

@@ -18,7 +18,7 @@ const ChatView = styled.View`
 `;
 const Text = styled.Text`
   color: rgba(255, 255, 255, 0.6);
-  font-size: 16;
+  font-size: 16px;
 `;
 
 const BrowseList = ({ name }) => {

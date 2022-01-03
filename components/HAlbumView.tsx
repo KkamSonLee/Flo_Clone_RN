@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Dimensions, Image } from "react-native";
+import { View, Text, Dimensions, Image, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
 import HAlbum from "../components/HAlbum";
-
 const TodayScroll = styled.FlatList`
   margin-top: 20px;
 `;

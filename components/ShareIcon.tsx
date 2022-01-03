@@ -8,14 +8,14 @@ const Container = styled.View`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-top: 30;
+  margin-top: 30px;
 `;
 const InfoText = styled.Text`
-  font-size: 9;
+  font-size: 9px;
   color: white;
 `;
 const CooperText = styled.Text`
-  font-size: 7;
+  font-size: 7px;
   color: white;
 `;
 const Image = styled.Image`

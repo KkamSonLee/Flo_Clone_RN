@@ -8,15 +8,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import styled from "styled-components/native";
-import HAlbum from "../components/HAlbum";
-import Loader from "../components/Loader";
 import { ImagePath, SlideImg } from "../utils";
-import Album from "../components/Album";
 import Swiper from "react-native-swiper";
 import HAlbumView from "../components/HAlbumView";
 import ShareIcon from "../components/ShareIcon";
 import MainSlide from "../components/MainSlide";
-
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Container = styled.View`
   flex: 1;
 `;
@@ -29,6 +26,7 @@ const VSeperator = styled.View`
   width: 20px;
 `;
 
+const Stack = createNativeStackNavigator();
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 const Home = ({ navigation: { navigate } }) => {
   return (
@@ -76,11 +74,13 @@ const Home = ({ navigation: { navigate } }) => {
                 resizeMode="contain"
               />
             </Swiper>
-            <HAlbumView
-              itemPath={ImagePath}
-              title={"밤에 듣기 좋은 음악"}
-              isSub={false}
-            />
+            <TouchableOpacity onPress={() => navigate("AlbumPlayer")}>
+              <HAlbumView
+                itemPath={ImagePath}
+                title={"밤에 듣기 좋은 음악"}
+                isSub={false}
+              />
+            </TouchableOpacity>
           </Container>
           <View>
             <ShareIcon />

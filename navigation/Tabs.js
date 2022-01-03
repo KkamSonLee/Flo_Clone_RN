@@ -12,6 +12,7 @@ import {
   YELLOW_COLOR,
 } from "../colors";
 import Btn from "../components/Btn";
+import { Text, View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 const Tabs = () => {
@@ -79,6 +80,7 @@ const Tabs = () => {
             );
           },
         }}
+        headerStyle={{}}
       />
       <Tab.Screen
         name="보관함"

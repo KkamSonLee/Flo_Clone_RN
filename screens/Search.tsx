@@ -34,7 +34,7 @@ const TitleText = styled.Text`
   flex: 1;
   color: white;
   font-size: 17px;
-  margin-left: 30;
+  margin-left: 30px;
 `;
 const DayText = styled.Text`
   flex: 1;
